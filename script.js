@@ -26,6 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         (ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)
     ) {
         // スマホなら 'mobile/index.html' に飛ばす
-        location.href = 'mobile/index.html';
+        location.href = 'mobile/mobile.html';
     }
 })();
