@@ -32,3 +32,23 @@ window.addEventListener('load', function() {
 
 // ... (もし他にハンバーガーメニューなどのコードがあれば、それはそのまま残してください) ...
 
+const video = document.getElementById('intro-video');
+const loaderPercent = document.getElementById('loader-percent');
+
+video.addEventListener('loadedmetadata', () => {
+    const duration = video.duration * 1000; // ミリ秒に変換
+    let start = null;
+
+    function updateProgress(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        let percent = Math.min((elapsed / duration) * 100, 100);
+        loaderPercent.textContent = Math.floor(percent) + '%';
+
+        if (percent < 100) {
+            requestAnimationFrame(updateProgress);
+        }
+    }
+
+    requestAnimationFrame(updateProgress);
+});
