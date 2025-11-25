@@ -17,18 +17,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ページの読み込み完了イベント
-window.addEventListener('load', function() {
-    // ローディング画面の要素を取得
-    const loader = document.getElementById('loader-wrap');
-    
-    // 'loaded' クラスを追加して、CSSのフェードアウトをトリガー
-    if (loader) {
-        setTimeout(() => {
-            loader.classList.add('loaded');
-        }, 2500); // 2.5秒遅延
-    }
-});
-
-// ... (もし他にハンバーガーメニューなどのコードがあれば、それはそのまま残してください) ...
-
